@@ -1,0 +1,72 @@
+# ================================================================================
+# MARS 2025 - .gitignore
+# ================================================================================
+
+# 🚨 환자 데이터 (절대 업로드 금지)
+*.csv
+*.parquet
+data/
+sample/
+events/
+
+# 모델 가중치 (용량 문제)
+models/
+*.bin
+*.safetensors
+*.pt
+*.pth
+
+# 출력 결과물
+result.csv
+runtime.txt
+outputs/
+outputs_final/
+*.md
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# 환경
+.env
+.venv
+env/
+venv/
+ENV/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# AWS 자격증명 (절대 업로드 금지)
+.aws/
+credentials
