@@ -8,6 +8,8 @@
 - [접근 전략](#-접근-전략)
 - [시스템 아키텍처](#-시스템-아키텍처)
 - [주요 기능](#-주요-기능)
+- [실행 방법](#-실행-방법)
+- [파일 구조](#-파일-구조)
 - [결과 및 성과](#-결과-및-성과)
 
 ---
@@ -21,9 +23,11 @@
 
 ### 팀 정보
 - **팀명**: 우걱우걱
+- **본선 순위**: 🏆 6위 / 100팀
 - **접근 방식**: Hybrid Architecture (Rule-based Extraction + LLM Generation)
 
 ### 데이터 구성
+
 | 파일명 | 설명 |
 |--------|------|
 | `admission.csv` | 입원·퇴원일자, 재원일수, 응급실/ICU 정보 |
@@ -218,6 +222,27 @@ def lite_search(pool, keywords, topk=6):
 
 ---
 
+## 🚀 실행 방법
+
+### 환경 설정
+
+```bash
+pip install -r requirements.txt
+```
+
+### 모델 다운로드
+
+```bash
+huggingface-cli download LGAI-EXAONE/EXAONE-3.5-7.8B-Instruct \
+    --local-dir ./models/EXAONE-3.5-7.8B-Instruct
+```
+
+### 실행
+
+```bash
+python submit.py
+```
+
 ### 출력 파일
 
 | 파일 | 설명 |
@@ -227,7 +252,25 @@ def lite_search(pool, keywords, topk=6):
 
 ---
 
+## 📁 파일 구조
+
+```
+mars-2025/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── submit.py           # 메인 실행 코드
+├── sample/             # (gitignore) 샘플 데이터
+└── models/             # (gitignore) LLM 가중치
+```
+
+---
+
 ## 📊 결과 및 성과
+
+### 본선 결과
+
+🏆 **100팀 중 6위** 달성
 
 ### 처리 성능
 
@@ -306,6 +349,8 @@ def lite_search(pool, keywords, topk=6):
 - ✅ 외부 API(ChatGPT, Claude, Gemini 등) 사용 금지
 - ✅ 데이터 다운로드, 캡처, 외부 저장 금지
 - ✅ 예시 문장은 재구성하여 실제 정보 미포함
+- ✅ **본 저장소에 실제 환자 데이터 미포함**
+- ✅ 코드 내 예시는 형식 설명용으로 실제 진료 정보 아님
 
 ---
 
