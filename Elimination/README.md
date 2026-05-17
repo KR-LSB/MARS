@@ -75,7 +75,6 @@
 📦 MARS-2025-Preliminary
 ├── 📄 예선.py                    # 메인 프로세서 코드
 ├── 📄 README.md                  # 프로젝트 설명
-└── 📄 processor.py               # DatathonProcessor 베이스 클래스 (대회 제공)
 ```
 
 ---
